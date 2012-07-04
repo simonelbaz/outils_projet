@@ -1,5 +1,5 @@
 declare
-cursor c_constraint is select * from user_constraints;
+cursor c_constraint is select * from user_constraints order by constraint_type desc;
 requete varchar2(1000);
 begin
 for n_constraint_name in c_constraint
