@@ -1,0 +1,177 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {1.1}Le module d'administration d'ADAMA}{4}
+\contentsline {section}{\numberline {1.2}Le module des Charg\'es de Client\`ele}{4}
+\contentsline {section}{\numberline {1.3}Le module de traitement des clients g\'er\'es par ADAMA}{5}
+\contentsline {section}{\numberline {1.4}Le module d'interface d'ADAMA}{5}
+\contentsline {section}{\numberline {1.5}Traitements parall\`eles}{5}
+\contentsline {section}{\numberline {1.6}Architecture du logiciel}{5}
+\contentsline {chapter}{\numberline {2}Installation d'ADAMA}{6}
+\contentsline {section}{\numberline {2.1}Pr\'erequis}{6}
+\contentsline {paragraph}{Installation de PostgreSQL}{6}
+\contentsline {paragraph}{Cr\'eation de l'environnement de fonctionnement de la base de donn\'ees}{7}
+\contentsline {paragraph}{Cr\'eation de la base de donn\'ees pour ADAMA}{7}
+\contentsline {section}{\numberline {2.2}Installation de libpqxx}{7}
+\contentsline {section}{\numberline {2.3}Installation de Xerces}{7}
+\contentsline {section}{\numberline {2.4}Installation de Xalan}{8}
+\contentsline {section}{\numberline {2.5}Installation de Apache}{8}
+\contentsline {section}{\numberline {2.6}Installation de Axis2/c}{8}
+\contentsline {section}{\numberline {2.7}Installation de wxWidgets}{9}
+\contentsline {section}{\numberline {2.8}Installation de log4cxx}{10}
+\contentsline {paragraph}{Installation de apr-1.2.12}{10}
+\contentsline {paragraph}{Installation de apr-util-1.2.12}{10}
+\contentsline {paragraph}{Installation de ant-contrib + cpptasks}{10}
+\contentsline {paragraph}{Installation de log4cxx}{10}
+\contentsline {section}{\numberline {2.9}Installation d'ADAMA}{11}
+\contentsline {paragraph}{Cr\'eation de la base de donn\'ees pour ADAMA}{11}
+\contentsline {section}{\numberline {2.10}V\'erification de l'installation}{12}
+\contentsline {chapter}{\numberline {3}Architecture logicielle du module d'administration}{13}
+\contentsline {section}{\numberline {3.1}Lancement du serveur \textsl {adamad}}{13}
+\contentsline {paragraph}{Remarque}{13}
+\contentsline {section}{\numberline {3.2}Lancement du module pour le charg\'e de client\`ele}{13}
+\contentsline {section}{\numberline {3.3}Lancement du module d'administration}{14}
+\contentsline {section}{\numberline {3.4}Description du module graphique d'administration d'ADAMA}{14}
+\contentsline {subsection}{\numberline {3.4.1}D\'efinition des cycles de recouvrement}{14}
+\contentsline {subsection}{\numberline {3.4.2}Affichage des cycles de relance}{15}
+\contentsline {subsection}{\numberline {3.4.3}Ajout d'un cycle de relance}{15}
+\contentsline {subsection}{\numberline {3.4.4}Affichage des \'etapes de relance}{15}
+\contentsline {subsection}{\numberline {3.4.5}Ajout d'une \'etape de relance}{17}
+\contentsline {subsection}{\numberline {3.4.6}Modification des \'etapes de relance}{18}
+\contentsline {subsection}{\numberline {3.4.7}D\'efinition des actions de recouvrement}{18}
+\contentsline {subsection}{\numberline {3.4.8}Affichage des actions}{18}
+\contentsline {subsection}{\numberline {3.4.9}Ajout d'une action}{22}
+\contentsline {subsection}{\numberline {3.4.10}Affichage des fonctions}{22}
+\contentsline {subsubsection}{Description d'une fonction}{23}
+\contentsline {paragraph}{Remarque}{25}
+\contentsline {subsection}{\numberline {3.4.11}Structure g\'en\'erique d'un corps d'export, de flux SOAP ou de tickler}{25}
+\contentsline {paragraph}{Remarque:}{26}
+\contentsline {subsection}{\numberline {3.4.12}Structure g\'en\'erique des arguments d'export, de flux SOAP ou de tickler}{27}
+\contentsline {subsection}{\numberline {3.4.13}Exemple d'un corps d'export ou de flux SOAP}{27}
+\contentsline {subsection}{\numberline {3.4.14}Exemple de param\`etres pour un corps d'export ou de flux SOAP}{30}
+\contentsline {section}{\numberline {3.5}D\'efinition des cat\'egories de client}{30}
+\contentsline {section}{\numberline {3.6}D\'efinition des conditions d'admission dans une \'etape de recouvrement}{30}
+\contentsline {subsection}{\numberline {3.6.1}Structure g\'en\'erique d'un corps de condition}{30}
+\contentsline {paragraph}{Exemple de corps de condition}{30}
+\contentsline {section}{\numberline {3.7}Gestion des actions de sortie de recouvrement}{31}
+\contentsline {section}{\numberline {3.8}Gestion des URL des imports et des flux SOAP}{31}
+\contentsline {subsection}{\numberline {3.8.1}Ajout d'un r\'epertoire d'import/export}{33}
+\contentsline {subsection}{\numberline {3.8.2}Suppression d'un r\'epertoire d'import/export}{33}
+\contentsline {subsection}{\numberline {3.8.3}Ajout d'une URL SOAP}{35}
+\contentsline {subsection}{\numberline {3.8.4}Suppression d'une URL SOAP}{35}
+\contentsline {subsection}{\numberline {3.8.5}Lancement d'un import}{35}
+\contentsline {section}{\numberline {3.9}Contr\^ole du serveur ADAMA et des traitements}{36}
+\contentsline {subsection}{\numberline {3.9.1}Lancement du serveur \textsl {adamad}}{36}
+\contentsline {paragraph}{Remarque}{37}
+\contentsline {subsection}{\numberline {3.9.2}Lancement du moteur de traitement des clients}{37}
+\contentsline {section}{\numberline {3.10}G\'en\'eration de logs}{37}
+\contentsline {chapter}{\numberline {4}Le module des Charg\'es de Client\`ele}{38}
+\contentsline {section}{\numberline {4.1}Lancement du module des Charg\'es de Client\`ele}{38}
+\contentsline {section}{\numberline {4.2}Description du mode graphique du module de CDC}{38}
+\contentsline {subsection}{\numberline {4.2.1}Description de l'onglet \textbf {Infos}}{40}
+\contentsline {paragraph}{Remarque}{40}
+\contentsline {subsection}{\numberline {4.2.2}Description de l'onglet \textbf {Actions}}{40}
+\contentsline {subsection}{\numberline {4.2.3}Description de l'onglet \textbf {Invoices}}{42}
+\contentsline {subsection}{\numberline {4.2.4}Description de l'onglet \textbf {Payments}}{43}
+\contentsline {subsection}{\numberline {4.2.5}Description de l'onglet \textbf {Contracts}}{45}
+\contentsline {paragraph}{Remarque}{45}
+\contentsline {subsubsection}{Modification du contrat d'un client}{45}
+\contentsline {subsection}{\numberline {4.2.6}Description de l'onglet \textbf {Fees}}{46}
+\contentsline {subsection}{\numberline {4.2.7}Description de l'onglet \textbf {History}}{46}
+\contentsline {subsection}{\numberline {4.2.8}Description de l'onglet \textbf {Snapshot}}{46}
+\contentsline {subsection}{\numberline {4.2.9}Description de l'onglet \textbf {Ticklers}}{50}
+\contentsline {subsubsection}{Modification d'un tickler}{51}
+\contentsline {chapter}{\numberline {5}Communication avec les interfaces d'ADAMA}{52}
+\contentsline {section}{\numberline {5.1}Introduction}{52}
+\contentsline {section}{\numberline {5.2}Le module d'import d'ADAMA}{52}
+\contentsline {subsection}{\numberline {5.2.1}Sch\'ema XML d\'ecrivant le client: customer\_import.xsd}{53}
+\contentsline {subsection}{\numberline {5.2.2}Import des clients}{55}
+\contentsline {paragraph}{Remarque}{55}
+\contentsline {subsection}{\numberline {5.2.3}Sch\'ema XML d\'ecrivant le contrat: contract\_import.xsd}{55}
+\contentsline {subsection}{\numberline {5.2.4}Import des contrats}{56}
+\contentsline {paragraph}{Etat des ressources}{57}
+\contentsline {subsection}{\numberline {5.2.5}Sch\'ema XML d\'ecrivant la facture: invoice\_import.xsd}{57}
+\contentsline {subsection}{\numberline {5.2.6}Import des factures}{58}
+\contentsline {subsection}{\numberline {5.2.7}Sch\'ema XML d\'ecrivant le paiement: payment\_import.xsd}{59}
+\contentsline {subsection}{\numberline {5.2.8}Import des paiements}{59}
+\contentsline {subsection}{\numberline {5.2.9}Sch\'ema XML d\'ecrivant l'op\'eration de commit: customer\_commit.xsd}{60}
+\contentsline {subsection}{\numberline {5.2.10}Commit des clients}{60}
+\contentsline {subsection}{\numberline {5.2.11}Modification des clients}{61}
+\contentsline {paragraph}{Exemple de fichier XML de modification de client}{61}
+\contentsline {subsection}{\numberline {5.2.12}Modification des contrats}{62}
+\contentsline {paragraph}{Exemple de fichier XML de modification de contrat}{62}
+\contentsline {subsection}{\numberline {5.2.13}Modification des factures}{62}
+\contentsline {paragraph}{Exemple de fichier XML de modification de facture}{62}
+\contentsline {subsection}{\numberline {5.2.14}Lancement de l'import}{63}
+\contentsline {subsection}{\numberline {5.2.15}Suivi du traitement}{63}
+\contentsline {subsection}{\numberline {5.2.16}Flux SOAP d'import}{63}
+\contentsline {subsection}{\numberline {5.2.17}Acquittement d'un flux SOAP}{64}
+\contentsline {subsection}{\numberline {5.2.18}Exemple d'acquittement d'un flux SOAP}{64}
+\contentsline {section}{\numberline {5.3}Le module d'export d'ADAMA}{64}
+\contentsline {section}{\numberline {5.4}Statistiques du module d'export}{65}
+\contentsline {chapter}{\numberline {6}Architecture logicielle du module de traitement}{66}
+\contentsline {section}{\numberline {6.1}Lancement des traitements}{66}
+\contentsline {section}{\numberline {6.2}S\'equencement des traitements}{66}
+\contentsline {subsection}{\numberline {6.2.1}Affectation de l'\'etape initiale}{67}
+\contentsline {subsection}{\numberline {6.2.2}Affectation de l'\'etape suivante}{67}
+\contentsline {paragraph}{Remarque}{67}
+\contentsline {subsection}{\numberline {6.2.3}Calcul du temps pass\'e dans une \'etape}{67}
+\contentsline {section}{\numberline {6.3}M\'ecanisme de sortie du recouvrement}{68}
+\contentsline {subsection}{\numberline {6.3.1}Lancement du binaire adama\_rollback}{68}
+\contentsline {subsection}{\numberline {6.3.2}S\'equence des traitements}{68}
+\contentsline {subsection}{\numberline {6.3.3}M\'ecanisme de retour en recouvrement}{69}
+\contentsline {subsection}{\numberline {6.3.4}Synchronisation entre adama\_engine et adama\_rollback}{69}
+\contentsline {section}{\numberline {6.4}Le mode de reprise en cas d'erreur}{69}
+\contentsline {chapter}{\numberline {7}Mod\`ele conceptuel de donn\'ees}{70}
+\contentsline {section}{\numberline {7.1}Description des tables}{71}
+\contentsline {paragraph}{ACTIONS\\}{71}
+\contentsline {paragraph}{ACTIONS\_FUNCTIONS\\}{71}
+\contentsline {paragraph}{ACTIONS\_STEPS\\}{72}
+\contentsline {paragraph}{ADAMA\_CONFIG\\}{72}
+\contentsline {paragraph}{CASH\_RECEIPT\\}{72}
+\contentsline {paragraph}{CIVILITY\\}{72}
+\contentsline {paragraph}{CONDITIONS\\}{73}
+\contentsline {paragraph}{CONTRACT\\}{73}
+\contentsline {paragraph}{CONTRACT\_HISTORY\\}{73}
+\contentsline {paragraph}{CONTRACT\_RESOURCES\\}{74}
+\contentsline {paragraph}{CUSTOMER\\}{74}
+\contentsline {paragraph}{CUSTOMER\_CATEGORY\\}{74}
+\contentsline {paragraph}{CUSTOMER\_DELAY\\}{75}
+\contentsline {paragraph}{CUSTOMER\_DETAIL\\}{75}
+\contentsline {paragraph}{CUSTOMER\_HISTORY\\}{76}
+\contentsline {paragraph}{CUSTOMER\_PATH\\}{76}
+\contentsline {paragraph}{CYCLES\\}{76}
+\contentsline {paragraph}{DUNNING\_LETTER\\}{77}
+\contentsline {paragraph}{EXPORT\\}{77}
+\contentsline {paragraph}{EXPORT\_FILE\\}{77}
+\contentsline {paragraph}{EXPORT\_CUSTOMER\\}{77}
+\contentsline {paragraph}{FALLING\_DUES\\}{77}
+\contentsline {paragraph}{FEES\\}{78}
+\contentsline {paragraph}{FEES\_PARAM\\}{78}
+\contentsline {paragraph}{INOUT\_STATS\\}{78}
+\contentsline {paragraph}{INVOICE\\}{79}
+\contentsline {paragraph}{PAYMENTS\\}{79}
+\contentsline {paragraph}{PROC\_STOCK\\}{79}
+\contentsline {paragraph}{REASON\_STATUS\\}{79}
+\contentsline {paragraph}{REF\_SEQ\\}{80}
+\contentsline {paragraph}{RESOURCE\_SERVICES\\}{80}
+\contentsline {paragraph}{SMS\\}{80}
+\contentsline {paragraph}{SMS\_ETAPE\\}{81}
+\contentsline {paragraph}{SOAP\_OUT\_STREAMS\\}{81}
+\contentsline {paragraph}{STATUS\_REASONS\\}{81}
+\contentsline {paragraph}{STEP\_CONDITION\\}{81}
+\contentsline {paragraph}{STEPS\\}{82}
+\contentsline {paragraph}{TICKLERS\\}{82}
+\contentsline {paragraph}{TICKLER\_RECORDS\\}{82}
+\contentsline {paragraph}{URL\_REF\\}{83}
+\contentsline {chapter}{\numberline {8}Codes retour d'ADAMA}{84}
+\contentsline {chapter}{\numberline {9}Check lists}{85}
+\contentsline {section}{\numberline {9.1}Comment cr\'eer les foonctions n\'ecessaires \`a la gestion des \'etapes}{85}
+\contentsline {section}{\numberline {9.2}Comment param\'etrer une \'etape}{85}
+\contentsline {paragraph}{Installation de la base ademo}{86}
+\contentsline {paragraph}{Reste a faire}{86}
+\contentsline {paragraph}{Professional Skills}{87}
+\contentsline {paragraph}{Functional Skills}{87}
+\contentsline {paragraph}{Technical Skills}{87}
+\contentsline {paragraph}{References}{87}
+\contentsline {paragraph}{Languages}{87}
+\contentsline {section}{\numberline {9.3}Experience}{88}
