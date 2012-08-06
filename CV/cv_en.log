@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011-OpenBSD_Ports) (format=latex 2011.9.1)  22 JUL 2012 01:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011-OpenBSD_Ports) (format=latex 2011.9.1)  2 AUG 2012 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -173,52 +173,99 @@ Overfull \hbox (15.55505pt too wide) in paragraph at lines 21--22
 ics at E.N.S.E.E.I.H.T
  []
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¨ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
 []\OT1/cmr/m/n/10.95 August 2011
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
 \OT1/cmr/m/n/10.95 /September
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/cmr/m/n/10.95 May 2010
  []
 
 
-Overfull \hbox (24.0pt too wide) in paragraph at lines 71--238
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]\OT1/cmr/m/n/10.95 July 2006
+ []
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no   in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]\OT1/cmr/m/n/10.95 July 2003
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]\OT1/cmr/m/n/10.95 Metamicro Li-gis soft-ware main-te-nance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+[]\OT1/cmr/m/n/10.95 September
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+\OT1/cmr/m/n/10.95 2001 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+\OT1/cmr/m/n/10.95 November
+ []
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 165--165
+[]\OT1/cmr/m/n/10.95 October 1999
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
+\OT1/cmr/m/n/10.95 /September
+ []
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ª in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[]\OT1/cmr/m/n/10.95 Septembre
+ []
+
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 70--184
 [][] 
  []
 
 [1
 
-] [2] (./cv_en.aux) ) 
+]
+Overfull \vbox (849.55824pt too high) has occurred while \output is active []
+
+
+[2]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no   in font cmr10!
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 187--192
+[][] 
+ []
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ª in font cmr10!
+[3] (./cv_en.aux) ) 
 Here is how much of TeX's memory you used:
  1323 strings out of 493634
  17450 string characters out of 3146334
- 83433 words of memory out of 3000000
+ 90433 words of memory out of 3000000
  4652 multiletter control sequences out of 15000+200000
  6697 words of font info for 26 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  25i,9n,24p,224b,163s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on cv_en.dvi (2 pages, 4820 bytes).
+Output written on cv_en.dvi (3 pages, 8704 bytes).
