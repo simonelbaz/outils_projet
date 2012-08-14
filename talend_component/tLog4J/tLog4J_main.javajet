@@ -3,12 +3,19 @@
 		org.talend.core.model.process.INode
 		org.talend.core.model.process.ElementParameterParser
 		org.talend.designer.codegen.config.CodeGeneratorArgument
+		org.talend.core.model.metadata.IMetadataColumn
+		org.talend.core.model.metadata.IMetadataTable
+		org.talend.core.model.process.EConnectionType
+		org.talend.core.model.process.IConnection
+		java.util.List
 	"
 %>
 <%
 CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
 INode node = (INode)codeGenArgument.getArgument();
 String cid = node.getUniqueName();
+// List<IMetadataTable> metadatas = node.getMetadataList();
+List<? extends IConnection> incomingConnections = node.getIncomingConnections();
 String log4JMessage = ElementParameterParser.getValue(node,"__LOG4J_MESSAGE__");
 int levelValue = Integer.parseInt(ElementParameterParser.getValue(node,"__LOG4J_LEVEL__"));
 String[] logMethods = {"trace","debug","info","warn","error","fatal"};
@@ -25,8 +32,20 @@ if (mainLog) {
 %>
 if (<%=logCondition%>) {
 <% } %>
-logger_<%=cid%>.<%=logMethods[levelValue]%>(<%=log4JMessage%>);
-nb_logged_line_<%=cid%>++;
+<%
+for(IConnection conn: incomingConnections)
+{
+	IMetadataTable metaDataTable = conn.getMetadataTable();
+	List<IMetadataColumn> metaDataColumns = metaDataTable.getListColumns();
+	for(IMetadataColumn column: metaDataColumns)
+	{
+%>
+	logger_<%=cid%>.<%=logMethods[levelValue]%>(<%=log4JMessage%> + "-" + <%=conn.getName()%>.<%=column.getLabel()%>);
+	nb_logged_line_<%=cid%>++;
+<%
+	}
+}
+%>
 	<% if (conditionalLog) { %>
 }
 <%

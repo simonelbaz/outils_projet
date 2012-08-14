@@ -19,3 +19,5 @@ org.apache.log4j.Logger logger_<%=cid%> = org.apache.log4j.Logger.getLogger(<%=l
 org.apache.log4j.Logger logger_<%=cid%> = org.apache.log4j.Logger.getLogger(this.getClass());
 <% } %>
 int nb_line_<%=cid%> = 0;
+
+System.out.println("I am the tLog4jCatch section");

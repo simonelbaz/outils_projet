@@ -62,8 +62,7 @@
 	</ADVANCED_PARAMETERS>
 
 	<CODEGENERATION>
-		<IMPORTS> 
-			<IMPORT MODULE="log4j-1.2.16.jar" NAME="log4j-1.2.16" REQUIRED="true"/>
+		<IMPORTS>
 			<IMPORT MODULE="talend-log4j-config-util.jar" NAME="talend-log4j-config-util" REQUIRED="true"/>
 		</IMPORTS>
 	</CODEGENERATION>
