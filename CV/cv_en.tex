@@ -3,16 +3,15 @@
 % $Revision: $
 %
 
-\documentclass[a4paper,11pt]{letter}
+\documentclass[a4paper,11pt]{article}
 \usepackage{latexsym,graphicx,multicol}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage{wrapfig,framed}
+\usepackage{wrapfig,framed,longtable}
 \pagestyle{empty}
-\date{31 July 2008}
-\begin{document}
-\underline{\textbf{Simon ELBAZ\hspace{\stretch{1}} 8, rue Belgrand\hspace*{\stretch{2}} 92300 Levallois-Perret}}
 
+\begin{document}
+\textbf{Simon ELBAZ\hspace{\stretch{1}} 8, rue Belgrand\hspace{\stretch{1}} 92300 Levallois-Perret} \\
 
 Mob :    +33 6 14 99 02 78
 
@@ -20,56 +19,71 @@ E-mail : simon.elbaz@free.fr
 
 Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
 
-\begin{framed}
 \center{\textbf{Engineer from Computer Sciences and Applied Mathematics department at E.N.S.E.E.I.H.T (www.enseeiht.fr)}}
-\end{framed}
+\bigskip
 
-
-\textbf{Professional Skills}
+\begin{tabular}{p{\textwidth}}
+\hline
+\textbf{Professional Skills}\\
+\hline
+\end{tabular}
 \begin{itemize}
-\item    Customer need analysis, good programmer, Testing
+\item    Customer need analysis, good programmer, testing
 \item    Good telco operator billing systems knowledge 
 \item    Call record processing, Dunning, CRM
 \item    Revenue Management, French driving License
 \item    Internet Protocols (IPv4, IPv6), Web 2.0
 \end{itemize}
+\bigskip
 
-\textbf{Technical Skills}
+\begin{tabular}{p{\textwidth}}
+\hline
+\textbf{Technical Skills}\\
+\hline
+\end{tabular}
 \begin{itemize}
-\item    Software: BSCS, Kenan FX, Oracle BRM, Arbor BP, Zope3, Plone, Subversion, Valgrind, Insure++, Git, Talend, Datastage, Informatica, Telelogic Continuus
-\item    Database: Oracle, Postgresql, MySQL, SQLite, Sybase
-\item    OS : Linux, Unix, NT
-\item    Languages : C/C++, Python, Cython, Shell, Perl, Java, PHP, Lex, Yacc, PL/SQL, Pro*C
-\item    Networks : SSL, IPv6
+\item    \textbf{Software}: BSCS, Kenan FX, Oracle BRM, Arbor BP, Zope3, Plone, Subversion, Valgrind, Insure++, Git, Talend, Datastage, Informatica, Telelogic Continuus
+\item    \textbf{Database}: Oracle, Postgresql, MySQL, SQLite, Sybase
+\item    \textbf{OS} : Linux, Unix, NT
+\item    \textbf{Languages} : C/C++, Python, Cython, Shell, Perl, Java, PHP, Lex, Yacc, PL/SQL, Pro*C
+\item    \textbf{Networks} : SSL, IPv6
 \end{itemize}
+\bigskip
 
-\textbf{References}
-
-CAPGEMINI, France
-	
-
-Test Team Responsible / Programmer at Capgemini, France
-	
-
-Tech Data, France
-	
-
-Marketing training (6 weeks) at Tech Data Corporation
-
-\textbf{Languages}
+\begin{tabular}{p{\textwidth}}
+\hline
+\textbf{References}\\
+\hline
+\end{tabular}
 \begin{itemize}
-\item    English : fluent (TOEIC : 740/990)
-\item    French : mother tongue
+\item \textbf{Capgemini} : Test Team Responsible / Programmer at Capgemini
+\item \textbf{Tech Data} : Marketing training (6 weeks) at Tech Data Corporation
 \end{itemize}
+\bigskip
 
-\textbf{Experience}
+\begin{tabular}{p{\textwidth}}
+\hline
+\textbf{Languages}\\
+\hline
+\end{tabular}
+\begin{itemize}
+\item    \textbf{English} : fluent (TOEIC : 740/990)
+\item    \textbf{French} : mother tongue
+\end{itemize}
+\bigskip
 
-\begin{tabular}{p{0.2\textwidth}p{0.8\textwidth}}
-January 2012 \slash Now & Data migration of driving licenses to a new system, Agence Nationale des Titres Securis\'es (www.ants.interieur.gouv.fr) \\
+%\setlength\LTleft{\parindent}
+%\setlength\LTright{\fill}
+\begin{longtable}{p{0.2\textwidth}p{0.8\textwidth}}
+\hline
+\textbf{Experience}\\
+\hline
+January 2012 -- Now & Data migration of driving licenses to a new system, Agence Nationale des Titres Securis\'es (www.ants.interieur.gouv.fr) \\
 	
 
- & Test of migration process from legacy system (Service National des Permis de Conduire) to new system called Faeton 
+ & 
 \begin{itemize}
+\item Test of migration process from legacy system (Service National des Permis de Conduire) to new system called Faeton 
 \item Test plan writing into HP Quality Center
 \item Use of HP Quality Center to monitor test progress
 \item Test automation using Perl, Shell
@@ -77,7 +91,7 @@ January 2012 \slash Now & Data migration of driving licenses to a new system, Ag
 \end{itemize} \\
 	
 
-Octobre 2011 \slash December 2011 & Revenue Management at Air France - KLM \\
+Octobre 2011 -- December 2011 & Revenue Management at Air France - KLM \\
 
 & \begin{itemize}
 \item Specification writing, programming for the Karma project within the Revenue Management department at Air France - KLM
@@ -85,13 +99,13 @@ Octobre 2011 \slash December 2011 & Revenue Management at Air France - KLM \\
 \end{itemize} \\
 	
 
-August 2011 \slash September 2011 & Data migration to upgraded inventory software, Orange \\
+August 2011 -- September 2011 & Data migration to upgraded inventory software, Orange \\
 & \begin{itemize}
 \item Test of migrated data into Torex inventory software for telco operator Orange
 \item ETL Talend programming
 \end{itemize} \\
 
-May 2010 \slash July 2011 & Install of a billing system for mobile telco operator SFR \\
+May 2010 -- July 2011 & Install of a billing system for mobile telco operator SFR \\
 & \begin{itemize}
 \item Test of installed billing software BRM Oracle
 \item Test automation using Perl, Shell
@@ -99,7 +113,7 @@ May 2010 \slash July 2011 & Install of a billing system for mobile telco operato
 \item Call record rating C programming using BRM Oracle pipeline tool
 \end{itemize} \\
 	
-August 2009 \slash April 2010 & Upgrade of billing software, OS and database at SFR, Entreprise\\
+August 2009 -- April 2010 & Upgrade of billing software, OS and database at SFR, Entreprise\\
 & \begin{itemize}
 \item        Version upgrade from Kenan BP 10.0 to Kenan FX 12.0
 \item        Data migration, OS upgrade (Solaris 2.10) and database upgrade (Oracle 10g)
@@ -108,7 +122,7 @@ August 2009 \slash April 2010 & Upgrade of billing software, OS and database at 
 \end{itemize} \\
 
 
-July 2006 \slash July 2009 & Billing and CRM system fusion at SFR, Cegetel, 9Telecom, Club Internet, Tele2 \\
+July 2006 -- July 2009 & Billing and CRM system fusion at SFR, Cegetel, 9Telecom, Club Internet, Tele2 \\
 	
 & \begin{itemize}
 \item         Data migration of legacy billing sytems to Kenan FX 11.0
@@ -119,7 +133,7 @@ July 2006 \slash July 2009 & Billing and CRM system fusion at SFR, Cegetel, 9Tel
 \item         Use of Informatica to extract and convert data into files for loading into Kenan BP and Siebel
 \end{itemize} \\
 
-July 2003 \slash May 2006 & Interface programmer and maintainer between Siebel CRM and billing system BSCS at SFR \\
+July 2003 -- May 2006 & Interface programmer and maintainer between Siebel CRM and billing system BSCS at SFR \\
 	
 
 & \begin{itemize}
@@ -132,7 +146,7 @@ July 2003 \slash May 2006 & Interface programmer and maintainer between Siebel C
 \end{itemize} \\
 	
 
-December 2001 \slash June 2003 & Dunning project at Bouygues Telecom \\
+December 2001 -- June 2003 & Dunning project at Bouygues Telecom \\
 	
 
 & \begin{itemize}
@@ -142,7 +156,7 @@ December 2001 \slash June 2003 & Dunning project at Bouygues Telecom \\
 \end{itemize} \\
 	
 
-September 2001 \slash November 2001 & Call ticket download software installation, Noos \\
+September 2001 -- November 2001 & Call ticket download software installation, Noos \\
 
 & \begin{itemize}
 \item     Programming a middleware evolution, ObjectSwitch (Kabira) for call ticket download from HLR, Noos
@@ -150,7 +164,7 @@ September 2001 \slash November 2001 & Call ticket download software installation
 \end{itemize} \\
 
 
-October 1999 \slash September 2001 & Billing system upgrade to BSCS, Maroc Telecom \\
+October 1999 -- September 2001 & Billing system upgrade to BSCS, Maroc Telecom \\
 	
 
 & \begin{itemize}
@@ -161,27 +175,32 @@ October 1999 \slash September 2001 & Billing system upgrade to BSCS, Maroc Telec
 \end{itemize} \\
 
 
-September 1999 \slash October 1999 & Pro*C programmer for BSCS V5.21 interface, Mobistar \\
+September 1999 -- October 1999 & Pro*C programmer for BSCS V5.21 interface, Mobistar \\
 	
 & \begin{itemize}
 \item Pro*C programming in the accounting team
 \end{itemize} \\
 
-\end{tabular}
-
-\textbf{Education}
+\end{longtable}
 
 \begin{tabular}{p{0.2\textwidth}p{0.8\textwidth}}
+\hline
+\textbf{Education} & \\
+\hline
+
 1996-99     & Student at School of Engineering ENSEEIHT in the Computer Sciences and Applied Mathematics department \\
-1993-96     &  Preparatory Classes for Grandes Ecoles in Mathematics, Physics and Chemistry at Lycee Carnot, Paris \\
-1993     &  Baccalaureat in Mathematics and Physics with honors at Lycee Lyautey1, Casablanca, Morocco \\
+1993-96     &  Preparatory Classes for Grandes Ecoles in Mathematics, Physics and Chemistry at Lyc\'ee Carnot, Paris \\
+1993     &  Baccalaureat in Mathematics and Physics with honors at Lyc\'ee Lyautey1, Casablanca, Morocco \\
 \end{tabular}
 
-\textbf{Interests}
+\begin{tabular}{p{\textwidth}}
+\hline
+\textbf{Hobbies :}\\
+\hline
+\end{tabular}
+\begin{itemize}
+\item Swimming, books
+\end{itemize}
 
-\textbf{Hobbies :}
-
-Swimming, books
-
-Levallois, $22^\mathrm{th}$ august 2012
+\flushright{Levallois, $22^\mathrm{th}$ august 2012}
 \end{document}
