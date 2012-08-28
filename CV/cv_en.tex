@@ -7,7 +7,8 @@
 \usepackage{latexsym,graphicx,multicol}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage{wrapfig,framed,longtable,tabularx,ltxtable}
+\usepackage{framed,longtable,tabularx,ltxtable}
+\usepackage{wrapfig,multirow}
 \pagestyle{empty}
 \usepackage{vmargin}            % redéfinir les marges
 \setmarginsrb{1cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{0cm}
@@ -15,11 +16,27 @@
 \begin{document}
 \textbf{Simon ELBAZ\hspace{\stretch{1}} 8, rue Belgrand\hspace{\stretch{1}} 92300 Levallois-Perret} \\
 
-Mob :    +33 6 14 99 02 78
+%\begin{minipage}{10cm}
+%\begin{tabularx}{\textwidth}{lX}
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+Mob :    +33 6 14 99 02 78 & \multirow{3}{*}{\includegraphics[width=3cm,height=3cm]{photo.eps}} \\
+E-mail : simon.elbaz@free.fr & \\
+Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children & \\
+& \\
+& \\
+%\end{minipage}
+%\end{tabularx}
+\end{tabular*}
+\bigskip
+%\hfill
 
-E-mail : simon.elbaz@free.fr
-
-Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
+%\begin{wrapfigure}{R}{0.2\textwidth}
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=2cm,height=3cm]{photo.eps}
+%\end{figure}
+%\caption{test}
+%\end{wrapfigure}
 
 \center{\textbf{Engineer from Computer Sciences and Applied Mathematics department at E.N.S.E.E.I.H.T (www.enseeiht.fr)}}
 \bigskip
@@ -30,7 +47,7 @@ Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
 \hline
 \begin{itemize}
 \item Customer need analysis, good programmer, testing 
-\item Good telco operator billing systems knowledge  
+\item Good telco operator rating\slash billing systems knowledge  
 \item Call record processing, Dunning, CRM 
 \item Revenue Management, French driving License 
 \item Internet Protocols (IPv4, IPv6), Web 2.0 
@@ -70,8 +87,6 @@ Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
 \end{itemize}
 \end{tabularx}
 
-\LTXtable{\textwidth}{cv_en_experience.tex}
-
 \begin{tabularx}{\textwidth}{p{0.2\textwidth}X}
 \hline
 \textbf{Education} & \\
@@ -81,7 +96,8 @@ Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
 1993-96     &  Preparatory Classes for Grandes Ecoles in Mathematics, Physics and Chemistry at Lyc\'ee Carnot, Paris \\
 1993     &  Baccalaureat in Mathematics and Physics with honors at Lyc\'ee Lyautey1, Casablanca, Morocco \\
 \end{tabularx}
-\bigskip
+
+\LTXtable{\textwidth}{cv_en_experience.tex}
 
 \begin{tabularx}{\textwidth}{X}
 \hline
@@ -93,4 +109,5 @@ Born $7^\mathrm{th}$ July 1975, Casablanca, married, 2 children
 \end{tabularx}
 
 \flushright{Levallois, $22^\mathrm{th}$ august 2012}
+
 \end{document}
