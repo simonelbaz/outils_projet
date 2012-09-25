@@ -33,7 +33,6 @@ public class TalendLog4JConfigurator {
 			logger.info("ArtifactId:"+ArtifactId);
 			logger.info("Version:"+Version);
 			logger.info("logIdentification:"+logIdentification);
-			logger.info("ndcMessage:"+ndc_message);
 			logger.info("Exiting application.");
 		}
 		catch(Exception e)

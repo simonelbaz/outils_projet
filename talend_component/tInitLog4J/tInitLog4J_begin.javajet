@@ -12,6 +12,12 @@
     String fileName = ElementParameterParser.getValue(node,"__LOG4J_CONF_FILE__");
     String lockConfig = ElementParameterParser.getValue(node,"__LOCK_CONFIG__");
     boolean dieOnError = "true".equals(ElementParameterParser.getValue(node,"__DIE_ON_ERROR__"));
+    String nomHost = ElementParameterParser.getValue(node,"__NOM_HOST__");
+    String nomContexte = ElementParameterParser.getValue(node,"__NOM_CONTEXT__");
+    String ArtifactId = ElementParameterParser.getValue(node,"__ARTIFACT_ID__");
+    String Version = ElementParameterParser.getValue(node,"__VERSION_IFO__");
+    String logIdentification = ElementParameterParser.getValue(node,"__LOG_IDENTIFICATION__");            
+    String ndc_message = ElementParameterParser.getValue(node,"__NDC_MESSAGE__");
 %>
 
 <% if (dieOnError) { //Extension, existence, et droit de lecture du fichier %>
@@ -26,7 +32,7 @@ if(!(<%=fileName%>.endsWith(".xml")) && !(<%=fileName%>.endsWith(".properties"))
 <% } %>
 System.out.println("I am the begin section");
 try {
-	org.infocentre.talend.log4j.TalendLog4JConfigurator.configureLog4J(<%=fileName%>, <%=lockConfig%>);
+	org.infocentre.talend.log4j.TalendLog4JConfigurator.configureLog4J(<%=fileName%>, <%=lockConfig%>, <%=nomHost%>, <%=nomContexte%>, <%=ArtifactId%>, <%=Version%>, <%=logIdentification%>, <%=ndc_message%>);
 	// org.courtine.talend.log4j.TalendLog4JConfigurator.configureLog4J(<%=fileName%>, <%=lockConfig%>);
 	// Logger logger = LogManager.getLogger("test_ifo_log4j");
 } catch (Exception e) {
