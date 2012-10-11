@@ -1,5 +1,6 @@
 package org.infocentre.talend.log4j;
 // Import log4j classes.
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 // import org.apache.log4j.BasicConfigurator;
 // import org.apache.log4j.PropertyConfigurator;
@@ -13,6 +14,7 @@ public class TalendLog4JConfigurator {
 	// Define a static logger variable so that it references the
 	// Logger instance named "TalendLog4JConfigurator".
 	static Logger logger = Logger.getLogger(TalendLog4JConfigurator.class);
+	private static String FAETON_SEVERITE_LOG = "faeton.log.severite";
 
 	public static void configureLog4J(String filename, Boolean isLocked, String nomHost, String nomContexte, String ArtifactId, String Version, String logIdentification, String ndc_message) {
 		try
@@ -24,6 +26,9 @@ public class TalendLog4JConfigurator {
 			MDC.put("logIdentification", logIdentification);
 			NDC.push(ndc_message);
 
+			String niveauLog = System.getProperty(FAETON_SEVERITE_LOG);
+			Level logLevel = Level.toLevel(niveauLog, Level.WARN);
+
 			DOMConfigurator.configure(filename);
 			logger.info("Entering application.");
 			logger.info("filename:"+filename);
@@ -34,6 +39,11 @@ public class TalendLog4JConfigurator {
 			logger.info("Version:"+Version);
 			logger.info("logIdentification:"+logIdentification);
 			logger.info("ndcMessage:"+ndc_message);
+			logger.info("niveauLog:"+niveauLog);
+
+			Logger.getRootLogger().setLevel(logLevel);
+			logger.setLevel(logLevel);
+
 			logger.info("Exiting application.");
 		}
 		catch(Exception e)
