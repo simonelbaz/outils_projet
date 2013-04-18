@@ -1,0 +1,173 @@
+#!/bin/sh
+#***********************************************************************
+#
+# DESCRIPTION :
+#   Projet Faeton
+#
+# REMARQUE :
+#
+#
+# PARAMETRES : 
+#
+#***********************************************************************
+
+# set -x
+
+L_CLASSPATH=""
+L_CURRENT_DIR=`dirname $0`
+L_CURRENT_PROG=`basename $0 .sh`
+L_CURRENT_DATE=`date +%Y%m%d%H%M%S`
+
+usage() {
+	echo "usage: $0 [ -m <nom du module> -c <nom du contexte> -p <plateforme> -t <tag a deployer> | [ -n ] ]"
+	echo ""
+	echo ""
+	echo "-m: Nom du module. Ex: MTB-ODS"
+	echo "-c: Nom du contexte. Ex: IPEI"
+	echo "-p: Plateforme. Ex: dev ou int"
+	echo "-n: Nettoyage de l'installation precedente."
+	echo "-t: Tag a deployer. Ex: 0.4.2.0"
+	echo "-h: Help"	
+	echo ""
+	echo ""
+
+exit 1;
+}
+
+cd ${L_CURRENT_DIR}
+# L_IFO_HOME=`pwd`
+# L_PARAM_DIR="${L_IFO_HOME}/param"
+# L_LOG_DIR="${L_IFO_HOME}/log/tech"
+# L_LOG_FILE=${L_LOG_DIR}"/"${L_CURRENT_PROG}"_"${L_CURRENT_DATE}".log"
+L_LOG_FILE=/opt/livraison/${L_CURRENT_PROG}"_"${L_CURRENT_DATE}".log"
+
+. ./install.env
+
+# si aucun parametre n'est indique en ligne de commande, getopt renvoie la chaine --
+# c'est pour cela, qu'un shift est realise dans le case
+
+MODULE_NAME=""
+CONTEXT_NAME=""
+PLATFORM_NAME=""
+TAG_TO_DEPLOY=""
+NETTOYAGE="0"
+
+code_retourne=0
+
+while [ "${code_retourne}" == "0" ] 
+do
+	getopts "hm:c:p:t:n" opt_name
+	code_retourne=$?
+	
+	if [ "${code_retourne}" == "0" ];
+	then
+		case "${opt_name}" in
+			m) MODULE_NAME=$(echo ${OPTARG} | tr '[:lower:]' '[:upper:]');;
+			c) CONTEXT_NAME=${OPTARG};;
+			p) PLATFORM_NAME=${OPTARG};;
+			t) TAG_TO_DEPLOY=${OPTARG};;
+			n) NETTOYAGE="1";;
+			h) usage;;
+			*) usage; exit 1;;
+		esac
+	fi
+done
+
+echo "Arguments de lancement:" $* >> ${L_LOG_FILE}
+echo "MODULE_NAME:"$MODULE_NAME >> ${L_LOG_FILE}
+echo "CONTEXT_NAME:"$CONTEXT_NAME >> ${L_LOG_FILE}
+echo "PLATFORM_NAME:"$PLATFORM_NAME >> ${L_LOG_FILE}
+echo "TAG_TO_DEPLOY:"$TAG_TO_DEPLOY >> ${L_LOG_FILE}
+
+if [ -z "${CONTEXT_NAME}" ];
+then
+	echo "La variable ${CONTEXT_NAME} n'est pas renseignee.";
+	exit 1;
+fi
+
+case "${MODULE_NAME}" in
+	"MTB-CENTRAL")MODULE_NAME_NORMAL="MTB-Central";;
+	"MTB-EXTERNE")MODULE_NAME_NORMAL="MTB-Externe";;
+	"MTB-INTERNET")MODULE_NAME_NORMAL="MTB-Internet";;
+	"MTB-INFOCENTRE")MODULE_NAME_NORMAL="MTB-Infocentre";;
+	"MTB-ODS")MODULE_NAME_NORMAL="MTB-ODS";;
+	"MT-INFOCENTRE")MODULE_NAME_NORMAL="MT-Infocentre";;
+	"MT-INFOCENTREACT")MODULE_NAME_NORMAL="MT-InfocentreACT";;
+esac
+
+deploy_user=$(echo ${CONTEXT_NAME} | tr '[:upper:]' '[:lower:]')
+
+mkdir /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}
+
+cd /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}
+
+tar xvzf /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}.tar.gz		
+
+perl /home/exportjob/install/replace_values.pl ${PLATFORM_NAME}".env" ${MODULE_NAME}
+
+if [ "$?" != "0" ];
+then
+	echo "Error during replace_values process";
+	exit 1;
+fi
+
+cd /home/exportjob/install/module/$(echo ${MODULE_NAME} | tr '[:upper:]' '[:lower:]')/
+
+for a_file_name in $(find . -name "*.curr" -type f)
+do
+	cp ${a_file_name} /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}/$(echo ${a_file_name} | sed -e "s/\.curr$//") 
+done
+
+cd /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}
+
+tar cvzf ../${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz *
+
+if [ "$?" != "0" ];
+then
+	echo "Archive could not be created";
+	exit 1;
+fi
+
+cd ..
+rm -rf /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}
+
+if [ "${NETTOYAGE}" == "1" ];
+then
+REMOTE_COMMAND="rm -rf /${CONTEXT_NAME}/*"
+ssh ${deploy_user}@${DEPLOY_HOST} ${REMOTE_COMMAND}
+
+if [ "$?" != "0" ];
+then
+	echo "${CONTEXT_NAME} could not be cleaned";
+	exit 1;
+fi
+
+fi
+
+scp /opt/livraison/${TAG_TO_DEPLOY}/${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz ${deploy_user}@${DEPLOY_HOST}:/${CONTEXT_NAME}
+
+if [ "$?" != "0" ];
+then
+	echo "Archive could not be transferred";
+	exit 1;
+fi
+
+REMOTE_COMMAND="cd /${CONTEXT_NAME}; tar xvzf ${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz "
+ssh ${deploy_user}@${DEPLOY_HOST} ${REMOTE_COMMAND}
+
+if [ "$?" != "0" ];
+then
+	echo "${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz could not be deployed";
+	exit 1;
+fi
+
+REMOTE_COMMAND="rm /${CONTEXT_NAME}/${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz "
+ssh ${deploy_user}@${DEPLOY_HOST} ${REMOTE_COMMAND}
+
+if [ "$?" != "0" ];
+then
+	echo "${MODULE_NAME_NORMAL}_${TAG_TO_DEPLOY}_replaced.tgz could not be suppressed";
+	exit 1;
+fi
+
+echo "Fin de l'installation de la livraison." >> ${L_LOG_FILE}

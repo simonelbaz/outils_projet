@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/repos/!svn/ver/512/trunk/tools/deploy/install
+END
+install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/!svn/ver/529/trunk/tools/deploy/install/install.sh
+END
+int.env
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/repos/!svn/ver/529/trunk/tools/deploy/install/int.env
+END
+list.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/repos/!svn/ver/513/trunk/tools/deploy/install/list.py
+END
+replace_values.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/528/trunk/tools/deploy/install/replace_values.pl
+END
+install.env
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/repos/!svn/ver/523/trunk/tools/deploy/install/install.env
+END
+x.env
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/repos/!svn/ver/513/trunk/tools/deploy/install/x.env
+END
